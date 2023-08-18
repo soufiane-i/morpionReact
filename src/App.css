@@ -1,0 +1,297 @@
+* {
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f4a261;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-size: 5rem;
+  font-weight: 900;
+  text-align: center;
+  color: #264653;
+  height: 20%;
+  pointer-events: none;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+h5 {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.square {
+  background: #e9c46a;
+  border: none;
+  float: left;
+  font-size: 7vw;
+  font-weight: normal;
+  line-height: 34px;
+  height: 10vw;
+  width: 10vw;
+  border-radius: 20px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  left: 2%;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.status {
+  font-size: 3rem;
+  pointer-events: none;
+}
+
+.game {
+  height: 80%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.game-board {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.board-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.game-info {
+  position: absolute;
+
+  right: 0%;
+  height: 100%;
+  background-color: #264653;
+  transition: right 1s ease;
+}
+
+.game-info-btn {
+  position: absolute;
+  top: 0;
+  left: -90px;
+  height: 90px;
+  width: 90px;
+  background-color: #264653;
+  border: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.game-info-btn img {
+  padding: 20px;
+  filter: invert();
+  cursor: pointer;
+}
+
+.moves {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 15px 40px;
+}
+
+.moves button {
+  border: none;
+  background-color: #264653;
+  color: white;
+  font-size: 1.8rem;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.green {
+  color: #2a9d8f;
+}
+
+.red {
+  color: #e76f51;
+}
+
+.restart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  background-color: #e76f51;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  padding: 10px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1090px) {
+  .game-info {
+    top: 0;
+  }
+
+  .open {
+    right: -310px !important;
+    transition: right 1s ease;
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  .status {
+    font-size: 2rem;
+  }
+
+  .restart {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+  }
+
+  .game-info {
+    width: 25%;
+  }
+
+  .moves {
+    padding: 10px 20px;
+  }
+
+  .moves button {
+    font-size: 1rem;
+  }
+
+  .square p {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .game {
+    height: 80%;
+  }
+
+  .left {
+    width: 95%;
+    height: 75%;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
+  .status {
+    text-align: center;
+  }
+
+  .restart {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .game-info {
+    bottom: -100% !important;
+    right: 0;
+    width: 100%;
+    transition: bottom 1s ease;
+  }
+
+  .game-info-btn {
+    left: 38% !important;
+    top: -80px;
+    margin: 0 auto;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 30px;
+  }
+
+  .open {
+    bottom: -30% !important;
+    transition: bottom 1s ease;
+  }
+
+  .game-board {
+    width: 90%;
+    margin: 0;
+    height: 200px;
+    transform: translateY(40%);
+  }
+
+  .square {
+    border-radius: 10px;
+    height: 60px;
+    width: 60px;
+  }
+}
